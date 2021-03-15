@@ -1,0 +1,18 @@
+trigger:
+  - '*'
+
+strategy:
+  matrix:
+    'Ubuntu 20.04 LTS with GCC 10 (Debug, x86_64)':
+      image: ubuntu-20.04
+      cc: gcc-10
+      platform: linux64
+      comptype: gcc
+
+pool:
+  vmImage: $(image)
+
+steps:
+  ## Fetch version number to ensure up-to-date cache
+  - bash: |
+      echo "Hello World!"
